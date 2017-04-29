@@ -731,9 +731,14 @@ $(function() {
         });
 
         if (feature) {
-            overlay.setPosition(evt.coordinate);
-            tooltip.innerHTML = '<p style="font-size:18px"><b>' + feature.get('name') + '</p><p>' + feature.get('date') + '</b></p>';
+        	if (feature.get('name') != undefined) {
+        		overlay.setPosition(evt.coordinate);
+        		tooltip.innerHTML = '<p style="font-size:18px"><b>' + feature.get('name') + '</p><p>' + feature.get('date') + '</b></p>';
+        	}
         } 
+        else {
+        	tooltip.innerHTML = '';
+        }
 
     };
 
