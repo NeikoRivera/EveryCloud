@@ -92,3 +92,23 @@ p {
 body {
     background-color: black;
 }
+
+#analysisArea {
+	color: black; 
+	background-color: white; 
+	position: absolute; 
+	top: 2%; 
+	right: 10%; 
+	padding: 5px 5px; 
+	opacity: 0.3; 
+	border-radius: 5px;
+	margin: 1px;
+}
+
+#clearSelect {
+	font-size: 24px; 
+	color: white; 
+	background-color:blue; 
+	float: center; 
+	padding:3px 3px;
+}
