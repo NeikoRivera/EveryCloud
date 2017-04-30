@@ -739,33 +739,14 @@ $(function() {
     	update();});
 
     $('#layer_one_legend').click(function () { 
-    	//alert($('#layer1').val());
     	var layer_val = $('#layer1').val();
     	generateLegend(layer_val);
-    	/*
-    	var colormap_url = layer_val + '.xml';
-        $.ajax({
-            type: "get",
-            url: colormap_url,
-            dataType: "xml",
-            success: function(data) {
-                console.log(data);
-                var colormap_entries = data.firstChild.children;
-                for (i = 0; i < colormap_entries.length; i++) {
-                	console.log(colormap_entries[i].getAttribute("label"));
-                	console.log(colormap_entries[i].getAttribute("rgb"));
-                }
-                
-            },
-            error: function(xhr, status) {
- 
-            }
-        });
-    	 */
     });
     
     $('#layer_two_legend').click(function () { 
-    	alert($('#layer2').val());});
+    	var layer_val = $('#layer2').val();
+    	generateLegend(layer_val);
+    });
     
     var generateLegend = function(layer_val) {
     	var colormap_url = 'colormaps/' + layer_val + '.xml';
