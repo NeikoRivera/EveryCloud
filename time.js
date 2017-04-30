@@ -39,76 +39,47 @@ $(function() {
 
     // Hash keeping track of layers and formats
     var fmt_hash = new Object();
+    // Baselayer
     fmt_hash['VIIRS_SNPP_CorrectedReflectance_TrueColor'] = "image/jpeg";
+    // Other layers
+    fmt_hash['MODIS_Terra_Aerosol_Optical_Depth_3km'] = "image/png";
+    fmt_hash['MODIS_Aqua_Aerosol_Optical_Depth_3km'] = "image/png";
+    fmt_hash['OMI_Single_Scattering_Albedo'] = "image/png";
     fmt_hash['AIRS_CO_Total_Column_Day'] = "image/png";
     fmt_hash['AIRS_CO_Total_Column_Night'] = "image/png";
-    fmt_hash['AIRS_Dust_Score_Ocean_Day'] = "image/png";
-    fmt_hash['AIRS_Dust_Score_Ocean_Night'] = "image/png";
-    fmt_hash['AIRS_Prata_SO2_Index_Day'] = "image/png";
-    fmt_hash['AIRS_Prata_SO2_Index_Night'] = "image/png";
+    fmt_hash['MODIS_Terra_Cloud_Effective_Radius'] = "image/png";
+    fmt_hash['MODIS_Terra_Cloud_Optical_Thickness'] = "image/png";
+    fmt_hash['MODIS_Terra_Cloud_Optical_Thickness_PCL'] = "image/png";
+    fmt_hash['MODIS_Aqua_Cloud_Optical_Thickness'] = "image/png";
+    fmt_hash['MODIS_Aqua_Cloud_Optical_Thickness_PCL'] = "image/png";
+    fmt_hash['LIS_High_Resolution_Full_Climatology_Combined_Flash_Rate_Climatology'] = "image/png";
     fmt_hash['AIRS_Precipitation_Day'] = "image/png";
     fmt_hash['AIRS_Precipitation_Night'] = "image/png";
-    fmt_hash['MODIS_Aqua_Aerosol'] = "image/png";
-    fmt_hash['MODIS_Aqua_Brightness_Temp_Band31_Day'] = "image/png";
-    fmt_hash['MODIS_Aqua_Brightness_Temp_Band31_Night'] = "image/png";
-    fmt_hash['MODIS_Aqua_Chlorophyll_A'] = "image/png";
-    fmt_hash['MODIS_Aqua_CorrectedReflectance_TrueColor'] = "image/jpeg";
-    fmt_hash['MODIS_Aqua_Land_Surface_Temp_Day'] = "image/png";
-    fmt_hash['MODIS_Aqua_Land_Surface_Temp_Night'] = "image/png";
-    fmt_hash['MODIS_Terra_Land_Surface_Temp_Day'] = "image/png";
-    fmt_hash['MODIS_Terra_Land_Surface_Temp_Night'] = "image/png";
-    fmt_hash['MODIS_Aqua_Sea_Ice'] = "image/png";
-    fmt_hash['MODIS_Aqua_SurfaceReflectance_Bands121'] = "image/jpeg";
-    fmt_hash['MODIS_Terra_Water_Vapor_5km_Day'] = "image/png";
-    fmt_hash['MODIS_Terra_Water_Vapor_5km_Night'] = "image/png";
-    fmt_hash['MODIS_Water_Mask'] = "image/png";
-    fmt_hash['OMI_SO2_Lower_Troposphere'] = "image/png";
-    fmt_hash['OMI_SO2_Middle_Troposphere'] = "image/png";
-    fmt_hash['OMI_SO2_Upper_Troposphere_and_Stratosphere'] = "image/png";
-    fmt_hash['VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1'] = "image/jpeg";
-    fmt_hash['VIIRS_SNPP_CorrectedReflectance_BandsM3-I3-M11'] = "image/jpeg";
-    fmt_hash['VIIRS_SNPP_CorrectedReflectance_TrueColor'] = "image/jpeg";
-    fmt_hash['AMSR2_Wind_Speed_Day'] = "image/png";
-    fmt_hash['AMSR2_Wind_Speed_Night'] = "image/png";
-    fmt_hash['MLS_N2O_46hPa_Day'] = "image/png";
-    fmt_hash['MLS_N2O_46hPa_Night'] = "image/png";
+    fmt_hash['AIRS_Prata_SO2_Index_Day'] = "image/png";
+    fmt_hash['AIRS_Prata_SO2_Index_Night'] = "image/png";
+    fmt_hash['MODIS_Fires_All'] = "image/png";
 
     // Hash keeping track of layers and projections
     var matrix_hash = new Object();
     matrix_hash['VIIRS_SNPP_CorrectedReflectance_TrueColor'] = "EPSG4326_250m";
+    
+    matrix_hash['MODIS_Terra_Aerosol_Optical_Depth_3km'] = "EPSG4326_2km";
+    matrix_hash['MODIS_Aqua_Aerosol_Optical_Depth_3km'] = "EPSG4326_2km";
+    matrix_hash['OMI_Single_Scattering_Albedo'] = "EPSG4326_2km";
     matrix_hash['AIRS_CO_Total_Column_Day'] = "EPSG4326_2km";
     matrix_hash['AIRS_CO_Total_Column_Night'] = "EPSG4326_2km";
-    matrix_hash['AIRS_Dust_Score_Ocean_Day'] = "EPSG4326_2km";
-    matrix_hash['AIRS_Dust_Score_Ocean_Night'] = "EPSG4326_2km";
-    matrix_hash['AIRS_Prata_SO2_Index_Day'] = "EPSG4326_2km";
-    matrix_hash['AIRS_Prata_SO2_Index_Night'] = "EPSG4326_2km";
+    matrix_hash['MODIS_Terra_Cloud_Effective_Radius'] = "EPSG4326_1km";
+    matrix_hash['MODIS_Terra_Cloud_Optical_Thickness'] = "EPSG4326_1km";
+    matrix_hash['MODIS_Terra_Cloud_Optical_Thickness_PCL'] = "EPSG4326_1km";
+    matrix_hash['MODIS_Aqua_Cloud_Optical_Thickness'] = "EPSG4326_1km";
+    matrix_hash['MODIS_Aqua_Cloud_Optical_Thickness_PCL'] = "EPSG4326_1km";
+    matrix_hash['LIS_High_Resolution_Full_Climatology_Combined_Flash_Rate_Climatology'] = "EPSG4326_2km";
     matrix_hash['AIRS_Precipitation_Day'] = "EPSG4326_2km";
     matrix_hash['AIRS_Precipitation_Night'] = "EPSG4326_2km";
-    matrix_hash['MODIS_Aqua_Aerosol'] = "EPSG4326_2km";
-    matrix_hash['MODIS_Aqua_Brightness_Temp_Band31_Day'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Aqua_Brightness_Temp_Band31_Night'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Aqua_Chlorophyll_A'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Aqua_CorrectedReflectance_TrueColor'] = "EPSG4326_250m";
-    matrix_hash['MODIS_Aqua_Land_Surface_Temp_Day'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Aqua_Land_Surface_Temp_Night'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Terra_Land_Surface_Temp_Day'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Terra_Land_Surface_Temp_Night'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Aqua_Sea_Ice'] = "EPSG4326_1km";
-    matrix_hash['MODIS_Aqua_SurfaceReflectance_Bands121'] = "EPSG4326_250m";
-    matrix_hash['MODIS_Terra_Water_Vapor_5km_Day'] = "EPSG4326_2km";
-    matrix_hash['MODIS_Terra_Water_Vapor_5km_Night'] = "EPSG4326_2km";
-    matrix_hash['MODIS_Water_Mask'] = "EPSG4326_250m";
-    matrix_hash['OMI_SO2_Lower_Troposphere'] = "EPSG4326_2km";
-    matrix_hash['OMI_SO2_Middle_Troposphere'] = "EPSG4326_2km";
-    matrix_hash['OMI_SO2_Upper_Troposphere_and_Stratosphere'] = "EPSG4326_2km";
-    matrix_hash['VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1'] = "EPSG4326_250m";
-    matrix_hash['VIIRS_SNPP_CorrectedReflectance_BandsM3-I3-M11'] = "EPSG4326_250m";
-    matrix_hash['AMSR2_Wind_Speed_Day'] = "EPSG4326_2km";
-    matrix_hash['AMSR2_Wind_Speed_Night'] = "EPSG4326_2km";
-    matrix_hash['MLS_N2O_46hPa_Day'] = "EPSG4326_2km";
-    matrix_hash['MLS_N2O_46hPa_Night'] = "EPSG4326_2km";
-
-
+    matrix_hash['AIRS_Prata_SO2_Index_Day'] = "EPSG4326_2km";
+    matrix_hash['AIRS_Prata_SO2_Index_Night'] = "EPSG4326_2km";
+    matrix_hash['MODIS_Fires_All'] = "EPSG4326_2km";
+   
     var resolution_hash = new Object();
     resolution_hash['EPSG4326_250m'] = [
         0.5625,
@@ -795,7 +766,7 @@ $(function() {
     	alert($('#layer2').val());});
     
     var generateLegend = function(layer_val) {
-    	var colormap_url = layer_val + '.xml';
+    	var colormap_url = 'colormaps/' + layer_val + '.xml';
         $.ajax({
             type: "get",
             url: colormap_url,
@@ -804,11 +775,27 @@ $(function() {
                 /* handle data here */
                 console.log(data);
                 var colormap_entries = data.firstChild.children;
+                var legendHtml = '';
                 for (i = 0; i < colormap_entries.length; i++) {
-                	console.log(colormap_entries[i].getAttribute("label"));
-                	console.log(colormap_entries[i].getAttribute("rgb"));
+                	//console.log(colormap_entries[i].getAttribute("label"));
+                	//console.log(colormap_entries[i].getAttribute("rgb"));
+                	legendHtml = legendHtml 
+                	 + '<p><i style = \"background-color:rgb('
+                	 + colormap_entries[i].getAttribute("rgb")
+                	 + ')\">&nbsp;&nbsp;</i>&nbsp;' 
+                	 + colormap_entries[i].getAttribute("label")
+                	 + "</p>";
                 }
-                
+                console.log(legendHtml);
+                $("#legendBody").html(legendHtml);
+                $( "#legendDialog" ).dialog({
+                    title: layer_val,
+                    dialogClass: 'dialog_fixed,ui-widget-header',
+                        modal: true,
+                        width: 300,
+                        maxHeight: 300,
+                        draggable:true
+                    });
             },
             error: function(xhr, status) {
                 /* handle error here */

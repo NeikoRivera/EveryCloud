@@ -64,3 +64,9 @@
 #layer_two_legend {
      cursor: pointer
 }
+
+#legendDlg {
+    height: 300px;
+    overflow: auto; /* Or scroll, depending on your needs*/
+    width: 300px;
+}
