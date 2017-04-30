@@ -64,6 +64,10 @@
      cursor: pointer
 }
 
+.clickableAwesomeFont {
+     cursor: pointer
+}
+
 #legendDlg {
     height: 300px;
     overflow: auto; /* Or scroll, depending on your needs*/
