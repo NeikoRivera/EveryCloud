@@ -70,3 +70,8 @@
     overflow: auto; /* Or scroll, depending on your needs*/
     width: 300px;
 }
+
+.time-col {
+	background-color: rgba(40, 40, 40, 0.8);
+	height: 60px;
+}

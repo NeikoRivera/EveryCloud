@@ -81,14 +81,7 @@
 				<div id="collapse1" class="panel-collapse collapse">
 					<div class="panel-body">
 						<form role="form" action="">
-							<div class="form-group">
-								<label for="baselayer">Year</label> <select
-									class="form-control" id="year">
-									<option value="2017">2017</option>
-									<option value="2016">2016 </option>
-									<option value="2015">2015</option>
-								</select>
-							</div>
+						
 							<div>
 								<label><input type="checkbox" class="checkbox-inline" 
 									id="basecheck" checked="true"> Show base layer</label>
@@ -249,11 +242,27 @@
 		</div>
 	</div>
 	<!-- Slider to select date-->
+	<!--  
 	<div id="day-panel">
 		<div id="day-label"></div>
 		<div id="day-slider"></div>
 	</div>
-
+	-->
+	<div class="row">
+		<div class = "col-xs-4 time-col">
+			<span id = "dateBackward">
+				<i class="fa fa-lg fa-step-backward" style="font-size:32px;color:white; float:right "></i>
+			</span>
+		</div>
+		<div class = "col-xs-4 time-col" style="text-align:center;">
+			<input class="datepicker" data-date-format="mm/dd/yyyy" id="nasaDate">
+		</div>
+		<div class = "col-xs-4 time-col">
+			<span id = "dateForward">
+				<i class="fa fa-lg fa-step-forward" style="font-size:32px;color:white; float:left"></i>
+			</span>
+		</div>
+	</div>
 	<!-- Label displaying information about selected events -->
 	<div id="summaryLabel"
 		style="color: black; background-color: white; position: absolute; top: 2%; right: 10%; padding: 5px 5px; opacity: 0.8">

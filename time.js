@@ -399,6 +399,7 @@ $(function() {
     update();
 
     // Slider values are in "days from present".
+    /*
     $("#day-slider").slider({
         value: -2,
         min: -200,
@@ -413,6 +414,7 @@ $(function() {
             update();
         }
     });
+    */
 
     // Does the user want to see base layer?
     var base_checkbox = $("#basecheck");
@@ -804,4 +806,48 @@ $(function() {
         });
     }
     
+
+   
+    
+    
+    $("#nasaDate").datepicker().on('change.dp', function() {
+        //alert("changed");
+    	var date = $(this).val();
+    	day = new Date(date);
+    	update();
+    	console.log(date);
+    });
+    
+    $('#dateForward').click(function () { 
+    	console.log('fowarding');
+    	var current_date = $('.datepicker').datepicker().val();
+    	if (current_date == '') {
+    		$("#nasaDate").datepicker("setDate", new Date);
+    	}
+    	else {
+    		console.log(current_date);
+    		var d = new Date(current_date);
+    		d.setDate(d.getDate()+1);
+    		$("#nasaDate").datepicker("setDate", d);
+    		day = d;
+    		update();
+    	}
+    });
+
+    $('#dateBackward').click(function () { 
+    	console.log('backward');
+    	var current_date = $('.datepicker').datepicker().val();
+    	if (current_date == '') {
+    		$("#nasaDate").datepicker("setDate", new Date);
+    	}
+    	else {
+    		console.log(current_date);
+    		var d = new Date(current_date);
+    		d.setDate(d.getDate()-1);
+    		$("#nasaDate").datepicker("setDate", d);
+    		day = d;
+    		update();
+    	}
+    });
+       
 });
