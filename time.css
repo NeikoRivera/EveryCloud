@@ -39,7 +39,6 @@
 }
 
 .map {
-	height: 600px;
 	width: 100%;
 }
 
@@ -75,3 +74,8 @@
 	background-color: rgba(40, 40, 40, 0.8);
 	height: 60px;
 }
+
+.container {
+	width: 95%;
+}
+
